@@ -24,7 +24,6 @@ const projects = [
     title: "mealify",
     image: "/mealify.webp",
     category: "Restaurants Website",
-    href: "#",
   },
   {
     title: "Weather App",
@@ -36,7 +35,6 @@ const projects = [
     image: "/portfolio.webp",
     category: "Portfolio Website",
     tall: true,
-    href: "#",
   },
 ];
 
