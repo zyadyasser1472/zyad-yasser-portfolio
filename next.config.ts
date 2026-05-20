@@ -1,10 +1,6 @@
-import type { NextConfig } from "next";
-
-const isGithubActions = process.env.GITHUB_ACTIONS === "true";
-
-const nextConfig: NextConfig = {
-  output: "export",
-  basePath: isGithubActions ? "/zyad-yasser-portfolio" : "",
+/** @type {import('next').NextConfig} */
+const nextConfig = {
+  output: 'export',
   images: {
     unoptimized: true,
   },
