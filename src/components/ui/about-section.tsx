@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { User } from "lucide-react";
+import { User, Download } from "lucide-react";
 
 import { motion } from "framer-motion";
 
@@ -61,6 +61,25 @@ export default function AboutSection() {
               I bridge the gap between design and code by converting Figma layouts into reusable UI with Tailwind CSS. 
               My expertise lies in integrating GraphQL/Apollo APIs and optimizing for speed, accessibility, and SEO.
             </motion.p>
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
+              className="mt-8"
+            >
+              <a 
+                href="/Zyad_Yasser_Hussien.pdf" 
+                download="Zyad_Yasser_Hussien.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-3 px-8 py-4 bg-[#C2A56D] text-black hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black rounded-full font-medium hover:scale-105 transition-all duration-300 shadow-lg"
+                style={{ fontFamily: "'Antic', sans-serif" }}
+              >
+                Download CV
+                <Download className="w-5 h-5" />
+              </a>
+            </motion.div>
           </div>
         </div>
 
@@ -78,7 +97,7 @@ export default function AboutSection() {
               <div className="flex justify-start mb-4">
                 <span className="text-2xl font-light text-neutral-300 dark:text-neutral-700">+</span>
               </div>
-              <div className="aspect-[4/5] overflow-hidden rounded-2xl shadow-xl transition-transform duration-500 group-hover:scale-[1.02]">
+              <div className="aspect-4/5 overflow-hidden rounded-2xl shadow-xl transition-transform duration-500 group-hover:scale-[1.02]">
                 <img
                   src={image.url}
                   alt={image.alt}

@@ -97,7 +97,7 @@ export default function ProjectsSection() {
               </div>
               <div 
                 className={`relative overflow-hidden rounded-2xl bg-neutral-100 dark:bg-neutral-900 ${
-                  project.tall ? "aspect-[3/4]" : "aspect-square"
+                  project.tall ? "aspect-3/4" : "aspect-square"
                 }`}
               >
                 <img
