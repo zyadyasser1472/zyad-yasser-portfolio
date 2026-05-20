@@ -28,7 +28,7 @@ const projects = [
   },
   {
     title: "Weather App",
-    image: "/Weather app.webp",
+    image: "/Weather-app.webp",
     category: "Front-End Project",
   },
   {
