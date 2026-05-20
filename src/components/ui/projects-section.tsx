@@ -3,6 +3,7 @@
 import React from "react";
 import { Folder, Plus } from "lucide-react";
 import { motion } from "framer-motion";
+import { getAssetPath } from "@/lib/utils";
 
 const projects = [
   {
@@ -101,7 +102,7 @@ export default function ProjectsSection() {
                 }`}
               >
                 <img
-                  src={project.image}
+                  src={getAssetPath(project.image)}
                   alt={project.title}
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                 />

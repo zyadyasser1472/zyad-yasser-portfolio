@@ -4,6 +4,7 @@ import React, { useState, useEffect, useRef } from "react";
 import { ChevronDown } from "lucide-react";
 import { motion, useMotionValue, useSpring, useTransform, useScroll } from "framer-motion";
 import Image from "next/image";
+import { getAssetPath } from "@/lib/utils";
 
 // High-End mask-reveal text animation component (Locomotive / Apple style)
 interface TextRevealProps {
@@ -404,7 +405,7 @@ export default function PortfolioHero() {
               className="w-[120px] h-[200px] sm:w-[130px] sm:h-[162px] md:w-[140px] md:h-[195px] lg:w-[200px] lg:h-[320px] rounded-full overflow-hidden border border-white/20 dark:border-black/40 group transition-all duration-300 hover:scale-110 cursor-pointer shadow-[0_20px_50px_rgba(194,165,109,0.25)] dark:shadow-[0_25px_60px_rgba(0,0,0,0.8)]"
             >
               <Image
-                src="/zyaaad.webp"
+                src={getAssetPath("/zyaaad.webp")}
                 alt="Zyad Yasser Hussien Profile"
                 width={1200}
                 height={1920}

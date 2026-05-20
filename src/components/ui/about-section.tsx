@@ -2,6 +2,7 @@
 
 import React from "react";
 import { User, Download } from "lucide-react";
+import { getAssetPath } from "@/lib/utils";
 
 import { motion } from "framer-motion";
 
@@ -69,7 +70,7 @@ export default function AboutSection() {
               className="mt-8"
             >
               <a 
-                href="/Zyad_Yasser_Hussien.pdf" 
+                href={getAssetPath("/Zyad_Yasser_Hussien.pdf")} 
                 download="Zyad_Yasser_Hussien.pdf"
                 target="_blank"
                 rel="noopener noreferrer"

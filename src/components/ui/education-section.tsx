@@ -4,6 +4,7 @@ import React from "react";
 import { GraduationCap, Award } from "lucide-react";
 import { motion } from "framer-motion";
 import Image from "next/image";
+import { getAssetPath } from "@/lib/utils";
 
 export default function EducationSection() {
   return (
@@ -84,7 +85,7 @@ export default function EducationSection() {
                   <div className="group/img relative overflow-hidden rounded-2xl border border-neutral-200 dark:border-neutral-900 bg-neutral-100 dark:bg-neutral-950 aspect-video md:max-h-[600px] w-full shadow-lg hover:border-[#C2A56D]/30 transition-all duration-500">
                     {/* Real Image */}
                     <Image 
-                      src="/project-img.webp" 
+                      src={getAssetPath("/project-img.webp")} 
                       alt="Graduation Project Showcase" 
                       className="w-full h-full object-contain p-2 group-hover/img:scale-[1.01] transition-transform duration-700 ease-out opacity-90 group-hover/img:opacity-100"
                       onError={(e) => {
