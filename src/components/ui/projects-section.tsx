@@ -4,6 +4,7 @@ import React from "react";
 import { Folder, Plus } from "lucide-react";
 import { motion } from "framer-motion";
 import { getAssetPath } from "@/lib/utils";
+import Image from "next/image";
 
 const projects = [
   {
@@ -101,9 +102,11 @@ export default function ProjectsSection() {
                   project.tall ? "aspect-3/4" : "aspect-square"
                 }`}
               >
-                <img
+                <Image
                   src={getAssetPath(project.image)}
                   alt={project.title}
+                  width={1200} 
+                  height={1920}
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                 />
                 <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
