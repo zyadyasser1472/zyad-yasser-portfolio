@@ -342,10 +342,76 @@ export default function PortfolioHero() {
       {/* Hero Section */}
       <main className="relative min-h-screen flex flex-col justify-center items-center z-10">
         
-        {/* Main Interactive Stage */}
-        <div className="relative w-full max-w-7xl px-4 flex flex-col items-center justify-center select-none">
+        {/* MOBILE VIEW (Stacked, tight spacing with identical premium desktop animations) */}
+        <motion.div 
+          style={{ opacity: textOpacity, scale: textScale }}
+          className="flex md:hidden flex-col items-center justify-center w-full px-6 select-none max-w-sm z-20"
+        >
+          {/* 1. Image Capsule first with 3D Tilt & scroll parallax */}
+          <motion.div 
+            style={{ 
+              rotateX, 
+              rotateY,
+              y: imageScrollY,
+              scale: imageScrollScale,
+              transformStyle: "preserve-3d",
+              perspective: 1000
+            }}
+            className="w-[150px] h-[240px] rounded-full overflow-hidden border border-[#C2A56D]/30 shadow-[0_10px_30px_rgba(194,165,109,0.15)] bg-neutral-900/50 cursor-pointer"
+          >
+            <div style={{ transform: "translateZ(30px)", width: "100%", height: "100%" }}>
+              <Image
+                src={getAssetPath("/zyaaad.webp")}
+                alt="Zyad Yasser Profile"
+                width={600}
+                height={960}
+                className="w-full h-full object-cover"
+              />
+            </div>
+          </motion.div>
           
-          {/* BACKGROUND TEXTS: "ZYAD YASSER" - Cinematic Parallax & Interactive Mouse Shifts */}
+          {/* 2. "Zyad" directly below image with horizontal scroll apart */}
+          <motion.div 
+            style={{ x: scrollTextX1 }}
+            className="mt-4 text-center w-full"
+          >
+            <TextReveal
+              text="Zyad"
+              delay={0.1}
+              className="font-extrabold text-5xl tracking-tight uppercase justify-center whitespace-nowrap"
+              style={{ color: "#C2A56D", fontFamily: "'Fira Code', monospace" }}
+            />
+          </motion.div>
+
+          {/* 3. "Yasser" directly below "Zyad" with horizontal scroll apart */}
+          <motion.div 
+            style={{ x: scrollTextX2 }}
+            className="text-center -mt-2 w-full"
+          >
+            <TextReveal
+              text="Yasser"
+              delay={0.3}
+              className="font-extrabold text-5xl tracking-tight uppercase justify-center whitespace-nowrap"
+              style={{ color: "#C2A56D", fontFamily: "'Fira Code', monospace" }}
+            />
+          </motion.div>
+
+          {/* 4. Tagline directly below "Yasser" with tight space */}
+          <div className="mt-7 text-center">
+            <BlurText
+              text="Crafting seamless digital experiences."
+              delay={150}
+              animateBy="words"
+              direction="top"
+              className="text-[20px] text-center transition-colors duration-300 text-neutral-500  hover:text-white"
+              style={{ fontFamily: "'Antic', sans-serif" }}
+            />
+          </div>
+        </motion.div>
+
+        {/* DESKTOP VIEW (Original Cinematic 3D Parallax with 3D floating capsule) */}
+        <div className="hidden md:flex relative w-full max-w-7xl px-4 flex-col items-center justify-center select-none">
+          {/* BACKGROUND TEXTS: "ZYAD YASSER" - Parallax & Mouse Shifts */}
           <motion.div 
             style={{ 
               x: useTransform(scrollTextX1, (v) => v + textShiftX1.get()),
@@ -375,7 +441,7 @@ export default function PortfolioHero() {
             <TextReveal
               text="Yasser"
               delay={0.3}
-              className="font-bold text-[80px] sm:text-[145px] md:text-[190px] lg:text-[280px] xl:text-[320px] leading-[0.8] tracking-tighter uppercase justify-center whitespace-nowrap"
+              className="font-bold text-[80px] sm:text-[145px] md:text-[190px] lg:text-[280px]  leading-[0.8] tracking-tighter uppercase justify-center whitespace-nowrap"
               style={{ color: "#C2A56D", fontFamily: "'Fira Code', monospace" }}
             />
           </motion.div>
@@ -418,9 +484,9 @@ export default function PortfolioHero() {
 
         </div>
 
-        {/* Tagline - Proper Distance Below Hero */}
-        <div className="absolute bottom-16 sm:bottom-20 md:bottom-24 lg:bottom-32 xl:bottom-36 left-1/2 -translate-x-1/2 w-full px-6">
-          <div className="flex justify-center">
+        {/* Tagline - Desktop Only */}
+        <div className="hidden md:block absolute bottom-16 sm:bottom-20 md:bottom-24 lg:bottom-32 xl:bottom-28 left-1/2 -translate-x-1/2 w-full px-6">
+          <div className="flex  justify-center">
             <BlurText
               text="Crafting seamless digital experiences."
               delay={150}
