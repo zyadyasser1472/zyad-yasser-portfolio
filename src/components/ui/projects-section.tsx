@@ -11,30 +11,54 @@ const projects = [
     title: "Codetoon",
     image: "/Codetoon.webp",
     category: "Web Development",
-    tall: true,
+    width: 1426,
+    height: 1068,
     href: "https://codetoon.net",
   },
   {
     title: "EBP Real Estate",
     image: "/CT-EBP.webp",
     category: "Real Estate Website",
+    width: 1080,
+    height: 1350,
     href: "https://egyptbestproperties.com",
+  },
+  {
+    title: "Buongo",
+    image: "/buongo.webp",
+    category: "Cloud ERP Platform",
+    width: 843,
+    height: 514,
+    href: "https://buongo.com",
+  },
+  {
+    title: "Maksab",
+    image: "/maksab.webp",
+    category: "Job Platform",
+    width: 1536,
+    height: 1024,
+  },
+  {
+    title: "Alfehris",
+    image: "/alfehris.webp",
+    category: "Business Directory Platform",
+    width: 1280,
+    height: 853,
+    href: "https://alfehris.com",
   },
   {
     title: "mealify",
     image: "/mealify.webp",
     category: "Restaurants Website",
+    width: 2928,
+    height: 1440,
   },
   {
     title: "Weather App",
     image: "/weather-app.webp",
     category: "Front-End Project",
-  },
-  {
-    title: "portfolio",
-    image: "/portfolio.webp",
-    category: "Portfolio Website",
-    tall: true,
+    width: 2880,
+    height: 1440,
   },
 ];
 
@@ -95,17 +119,13 @@ export default function ProjectsSection() {
               <div className="flex justify-start mb-4">
                 <Plus className="w-4 h-4 text-neutral-300 dark:text-neutral-800" />
               </div>
-              <div 
-                className={`relative overflow-hidden rounded-2xl bg-neutral-100 dark:bg-neutral-900 ${
-                  project.tall ? "aspect-3/4" : "aspect-square"
-                }`}
-              >
+              <div className="relative overflow-hidden rounded-2xl bg-neutral-100 dark:bg-neutral-900">
                 <Image
                   src={getAssetPath(project.image)}
                   alt={project.title}
-                  width={1200} 
-                  height={1920}
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                  width={project.width}
+                  height={project.height}
+                  className="w-full h-auto transition-transform duration-700 group-hover:scale-110"
                 />
                 <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               </div>
